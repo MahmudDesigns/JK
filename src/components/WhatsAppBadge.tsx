@@ -5,7 +5,7 @@ export default function WhatsAppBadge() {
 
   return (
     <a
-      href="https://wa.me/254700000000?text=Hello%20John%2C%20I%20want%20to%20connect%20with%20you%20about%20Thika%20Town!"
+      href="https://wa.me/254719354950?text=Hello%20John%2C%20I%20want%20to%20connect%20with%20you%20about%20Thika%20Town!"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group"
