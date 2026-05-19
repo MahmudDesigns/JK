@@ -71,7 +71,7 @@ export default function Support() {
                 <span className="text-xs font-semibold text-oxford/50 uppercase tracking-wider block mb-3">Option 3: Send Money</span>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-oxford/60">Phone Number</span>
-                  <span className="text-sm font-bold text-oxford font-mono tracking-wider">0700 000 000</span>
+                  <span className="text-sm font-bold text-oxford font-mono tracking-wider">0719354950</span>
                 </div>
                 <p className="text-[11px] text-oxford/40 mt-2">Name: <strong>JOHN KAMAU</strong></p>
               </div>
