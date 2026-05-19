@@ -50,7 +50,7 @@ export default function Footer() {
                 <span>📍</span> Thika Town, Kiambu County
               </p>
               <p className="flex items-center gap-2 text-white/40">
-                <span>📞</span> 0700 000 000
+                <span>📞</span> 0719 354950
               </p>
               <p className="flex items-center gap-2 text-white/40">
                 <span>✉️</span> info@johnkamau2027.co.ke
