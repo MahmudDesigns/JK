@@ -32,29 +32,33 @@ export default function Support() {
     let targetMessage = '';
     switch(method) {
       case 'mpesa':
-        targetMessage = 'Sending secure direct M-Pesa prompt... If your line is busy, please use our Paybill or Till alternatives below.';
+        targetMessage = 'Initiating mobile money routing link... If your line remains quiet, please use the direct Paybill or Buy Goods options below for manual confirmation.';
         setStatusMessage({ text: targetMessage, isError: false });
-        setLoading(false);
+        
+        // Take them straight to Pesapal's mobile layout version of your link
+        setTimeout(() => {
+          window.location.href = "https://store.pesapal.com/shop/wkhw0p-johnnyoikekamau";
+        }, 1500);
         break;
         
       case 'card':
         targetMessage = 'Redirecting to secure international card gateway via Pesapal...';
         setStatusMessage({ text: targetMessage, isError: false });
         
-        // Brief 1.5-second pause so voters can see the status notification text
+        // Takes the donor to your registered active Pesapal Shop path
         setTimeout(() => {
-          window.location.href = "https://store.pesapal.com/campaignsupportdonation";
+          window.location.href = "https://store.pesapal.com/shop/wkhw0p-johnnyoikekamau";
         }, 1500);
         break;
         
       case 'paybill':
-        targetMessage = 'Please open your M-Pesa menu, use Paybill 522522, and Account KAMAU2027 with your entered amount.';
+        targetMessage = 'MANUAL MPESA PAYBILL PROCEDURE: Open M-Pesa ➔ Lipa na M-Pesa ➔ Paybill. Enter Business No: 522522 | Account No: KAMAU2027. Enter your donation amount and input your PIN to complete.';
         setStatusMessage({ text: targetMessage, isError: false });
         setLoading(false);
         break;
         
       case 'till':
-        targetMessage = 'Please use our M-Pesa Buy Goods fallback. Dial *334#, use Till Number 8917463 to clear your payment.';
+        targetMessage = 'MANUAL MPESA BUY GOODS PROCEDURE: Dial *334# or use M-Pesa App ➔ Lipa na M-Pesa ➔ Buy Goods and Services. Enter Till Number: 8917463. Input your contribution amount and authorize with your PIN.';
         setStatusMessage({ text: targetMessage, isError: false });
         setLoading(false);
         break;
