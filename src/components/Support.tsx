@@ -32,25 +32,33 @@ export default function Support() {
     let targetMessage = '';
     switch(method) {
       case 'mpesa':
-        targetMessage = 'Sending secure direct M-Pesa prompt...';
+        targetMessage = 'Sending secure direct M-Pesa prompt... If your line is busy, please use our Paybill or Till alternatives below.';
+        setStatusMessage({ text: targetMessage, isError: false });
+        setLoading(false);
         break;
+        
       case 'card':
-        targetMessage = 'Opening secure international card gateway...';
+        targetMessage = 'Redirecting to secure international card gateway via Pesapal...';
+        setStatusMessage({ text: targetMessage, isError: false });
+        
+        // Brief 1.5-second pause so voters can see the status notification text
+        setTimeout(() => {
+          window.location.href = "https://store.pesapal.com/campaignsupportdonation";
+        }, 1500);
         break;
+        
       case 'paybill':
-        targetMessage = 'Initiating secure Paybill STK prompt to your phone...';
+        targetMessage = 'Please open your M-Pesa menu, use Paybill 522522, and Account KAMAU2027 with your entered amount.';
+        setStatusMessage({ text: targetMessage, isError: false });
+        setLoading(false);
         break;
+        
       case 'till':
-        targetMessage = 'Initiating secure Buy Goods Till STK prompt...';
+        targetMessage = 'Please use our M-Pesa Buy Goods fallback. Dial *334#, use Till Number 8917463 to clear your payment.';
+        setStatusMessage({ text: targetMessage, isError: false });
+        setLoading(false);
         break;
     }
-
-    setStatusMessage({ text: targetMessage, isError: false });
-    
-    // API integration placeholders
-    // try { ... backend fetch logic ... }
-    
-    setLoading(false);
   };
 
   return (
